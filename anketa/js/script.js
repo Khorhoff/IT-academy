@@ -25,13 +25,13 @@ while (true) {
     }
 }
 let gender = confirm("Ваш пол - мужской?");
-let isPension;
+let Pension;
 if (gender == true) {
     gender = "мужской";
-    isPension = age > 62 ? true : false;
+    Pension = age > 62 ? "да" : "нет";
 } else {
     gender = "женский";
-    isPension = age > 57 ? true : false;
+    Pension = age > 57 ? "да" : "нет";
 }
 
-alert(`ваше ФИО: ${surname} ${name} ${patronymic}\nваш возраст в годах: ${age}\nваш возраст в днях: ${age * 365}\nчерез пять лет вам будет: ${age + 5}\nваш пол: ${gender}\nвы на пенсии: ${isPension == true ? "да" : "нет"}`);
+alert(`ваше ФИО: ${surname} ${name} ${patronymic}\nваш возраст в годах: ${age}\nваш возраст в днях: ${age * 365}\nчерез пять лет вам будет: ${age + 5}\nваш пол: ${gender}\nвы на пенсии: ${Pension}`);
