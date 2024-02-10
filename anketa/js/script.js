@@ -18,9 +18,8 @@ while (true) {
     }
 }
 while (true) {
-    age = Number(prompt("Введите возраст в годах"));
-    if (age != NaN && age != 0
-    ) {
+    age = parseInt(Number(prompt("Введите возраст в годах")));
+    if (!isNaN(age) && age > 0) {
         break;
     }
 }
