@@ -1,4 +1,4 @@
-let surname, name, patronymic, age;
+let surname, firstname, patronymic, age;
 while (true) {
     surname = prompt("Введите фамилию");
     if (surname != "" && surname != null) {
@@ -6,8 +6,8 @@ while (true) {
     }
 }
 while (true) {
-    name = prompt("Введите имя");
-    if (name != "" && name != null) {
+    firstname = prompt("Введите имя");
+    if (firstname != "" && firstname != null) {
         break;
     }
 }
@@ -33,4 +33,4 @@ if (gender == true) {
     pension = age > 57 ? "да" : "нет";
 }
 
-alert(`ваше ФИО: ${surname} ${name} ${patronymic}\nваш возраст в годах: ${age}\nваш возраст в днях: ${age * 365}\nчерез пять лет вам будет: ${age + 5}\nваш пол: ${gender}\nвы на пенсии: ${pension}`);
+alert(`ваше ФИО: ${surname} ${firstname} ${patronymic}\nваш возраст в годах: ${age}\nваш возраст в днях: ${age * 365}\nчерез пять лет вам будет: ${age + 5}\nваш пол: ${gender}\nвы на пенсии: ${pension}`);
