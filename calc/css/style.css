@@ -1,0 +1,12 @@
+.line:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.button {
+    height: 50px;
+    width: 50px;
+}
+
+.button:not(:nth-child(3n)) {
+    margin-right: 15px;
+}
