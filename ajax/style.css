@@ -1,0 +1,15 @@
+ul {
+    display: flex;
+    width: 640px;
+    justify-content: space-between;
+    flex-flow: wrap;
+    margin: 0 auto;
+}
+
+li {
+    list-style-type: none;
+    width: 200px;
+    height: 300px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+}

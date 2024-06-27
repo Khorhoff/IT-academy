@@ -1,0 +1,13 @@
+.area {
+    background-color: red;
+    height: 700px;
+    width: 700px;
+    position: relative;
+}
+
+.square {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}

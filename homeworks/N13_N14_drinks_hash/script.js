@@ -7,32 +7,48 @@ function HashStorageFunc() {
             return { mess: 'Получен пустой объект' };
         }
         if ((key + '') in hashStorage) {
-            hashStorage.key = value;
+            hashStorage[`${key}`] = value;
             return { mess: 'Объект перезаписан' };
         }
-        hashStorage.key = value;
+        hashStorage[`${key}`] = value;
         return { mess: `Объект ${key} добавлен` };
     }
 
-    // self.getValue = (key) => {
-    //     if ((key + '') === '') {
-    //         return { mess: 'Получен пустой объект', answer: undefined };
-    //     }
-    // }
+    self.getValue = (key) => {
+        if(!((key + '') in hashStorage)) {
+            return {answ: undefined, mess: 'Ключ не найден'};
+        }
+        return {answ: hashStorage[`${key}`], mess: `Объект ${key} получен`};
+    }
 
-    // const toStringByKey = (obj, key, tab = '') => {
-    //     // obj - value объекта из hashStorage, key - ключ этого объекта, tab - табуляция для вложенности
-    //     let str = key + '\n';
-    //     if (obj instanceof Object) {
-    //         for (const k in obj) {
-    //             if (obj.k instanceof Array) {
-    //                 str += `${tab + obj.k}: `
-    //                 for (const i of obj.k) {
-    //                     str += `${i}, `
-    //                 }
-    //                 str += '\n';
-    //             }
-    //         }
-    //     }
-    // }
+    self.deleteValue = (key) => {
+        if (!((key + '') in hashStorage)) {
+            return {answ: false, mess: 'Ключ не найден'};
+        }
+        let newStor = {};
+        for (const k in hashStorage) {
+            if (k === (key + '')) {
+                continue;
+            }
+            newStor[k] = hashStorage[k];
+        }
+        return {answ: true, mess: `Объект ${key} удален`};
+    }
+
+    self.getKeys = () => {
+        let keysArray = [];
+        for (const key in hashStorage) {
+            keysArray.push(key);
+        }
+        return {answ: keysArray, mess: 'Получены все ключи'};
+    }
+}
+
+const drinkStorageFunk = new HashStorageFunc();
+
+function funk1(store) {
+    const drinkName = prompt('Введите название напитка');
+    const alco = confirm('Напиток алкогольный?') ? 'Да' : 'Нет';
+    const rec = prompt('Введите рецепт напитка');
+    store.addValue(drinkName, {isAlco: alco, recipe: rec});
 }

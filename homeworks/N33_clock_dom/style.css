@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.work-space {
+    display: none;
+}
+
+.clock {
+    /*циферблат*/
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: yellow;
+    z-index: 1;
+}
+
+.clock:before {
+    /*центр циферблата*/
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.clock-time {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    color: red;
+    z-index: 5;
+}
+
+.hour,
+.min,
+.sec {
+    position: absolute;
+    z-index: 4;
+}
+
+.hr, 
+.mn, 
+.sc {
+    /*квадраты которые будут крутить стрелки*/
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr:before {
+    /*часовая стрелки*/
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 50%;
+    background-color: black;
+    border-radius: 6px 6px 0 0;
+}
+.mn:before {
+    /*минутная стрелка*/
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 50%;
+    background-color: black;
+    border-radius: 6px 6px 0 0;
+}
+.sc:before {
+    /*секундная стрелка*/
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 50%;
+    background-color: black;
+    border-radius: 6px 6px 0 0;
+}
+.number {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
